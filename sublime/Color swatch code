@@ -1,0 +1,38 @@
+Color swatch code
+
+swatch_option_key
+
+{% assign swatch_value_downcased = value | downcase %}
+{%- assign variant_img_swatch = '' -%}
+{% for variant in product.variants %}
+  {% assign option_value_downcased = variant[swatch_option_key] | downcase %}
+  {% if option_value_downcased == swatch_value_downcased %}
+    {% if variant.image != blank %}
+      {%- assign variant_img_swatch = variant.image | image_url: width: 50 -%}
+    {% endif %}
+    {%- break -%}
+  {% endif %}
+{% endfor %}
+
+<label title="{{ value | escape }}" class="color__swatches product-sw" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="background-color: {% if swatch_color != blank %}{{ swatch_color }}{% else %}{{ colorValueDowncase }}{% endif %}; background-image:{% if variant_img_swatch != '' %}url({{ variant_img_swatch }});{% elsif swatch_image != blank %}{{ swatch_image }}{% elsif images[color_file_name] != blank %}url({{ color_image }});{% endif %}">
+  <span class="visually-hidden">{{ value -}} - {{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{ product.metafields.custom.product_meta_description  | metafield_tag }}

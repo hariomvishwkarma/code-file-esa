@@ -1,0 +1,423 @@
+1. base.css
+a) created common class for all section in heading container 
+.section-heading_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+b) change button padding
+.button--sb{
+  padding:10px; //edited
+}
+
+
+2. defoult schema json
+remove sub heading in toggle_tabs
+"toggle_tabs": {
+    "subheading": {
+    }
+},
+
+3. featured collection
+added in line no. 76
+if section.settings.collection == blank or products_to_display == 0
+  assign products_to_display = section.settings.products_to_show
+endif
+
+4. template-collection.css
+remove this
+.color-swatch__radio[type=radio]:checked+.color-swatch__item
+
+replace this
+.product-color__grid label
+.color-swatch__radio
+
+with
+.product-color__grid label {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
+  background-size: cover;
+  background-origin: border-box;
+  cursor:pointer;
+  position:relative;
+}
+.color-swatch__radio {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+.color-swatch__item::before {
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: inherit;
+  will-change: transform;
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+  position: absolute;
+  transform: scale(.75);
+  box-shadow: 0 0 0 .7px;
+  background-color: transparent;
+}
+.color-swatch__radio[type=radio]:checked+.color-swatch__item::before {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+5. File name
+ 1.customer feedback
+ 2.toggle tabs 
+
+
+
+
+
+
+
+
+changes in live
+1. featured collection
+remove this class 
+.featured-collections__section
+remove this css
+.featured-collections__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+added this class for common
+section-heading_container
+
+
+
+--------------------------------------
+
+
+04/12/24
+base.css remove this
+.title-wrapper--no-top-margin > .title {
+  margin-top: 0;
+}
+.title-wrapper--no-top-margin {
+  margin-top: 0;
+} 
+
+created common class for section column gap
+.section-column-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}  
+  
+--------------------------------------
+
+05/12/24
+component-card.css
+line no. 18
+.article-card-wrapper.card-wrapper.underline-links-hover:hover .card__content {
+  right: -1.5rem; // update
+  z-index: 1;
+  transition: right 0.5s ease-in-out, z-index 0s;
+}
+line 420
+.card__content.featured-blog {
+  padding: 1rem;
+}
+
+line 26
+.article-card__info {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #717171;
+}
+line 405
+.card__content.featured-blog .card__information {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+base.css line no.3484
+.underlined-hover-link,
+a.underlined-hover-link {
+  text-decoration: none;
+  display: inline-block;  
+  padding-bottom: 0px; // update
+  border-bottom: 1px solid rgb(var(--color-foreground));
+}
+
+component-article-card.css
+span.blog_author {
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #717171;
+}
+
+
+en.default.schema.json
+in featured-blog added
+"show_tag": {
+          "label": "Show tag"
+        }
+
+add line 679
+"newsletter": {
+  "name": "Email signup",
+  "settings": {
+    "full_width": {
+      "label": "Make section full width"
+    },
+    "paragraph": {
+      "content": "Each email subscription creates a customer account. [Learn more](https://help.shopify.com/manual/customers)"
+    }
+  },
+  "blocks": {
+    "heading": {
+      "name": "Heading",
+      "settings": {
+        "heading": {
+          "label": "Heading",
+          "default": "Subscribe to our emails"
+        }
+      }
+    },
+    "paragraph": {
+      "name": "Subheading",
+      "settings": {
+        "paragraph": {
+          "label": "Description",
+          "default": "<p>Be the first to know about new collections and exclusive offers.</p>"
+        }
+      }
+    },
+    "email_form": {
+      "name": "Email form"
+    }
+  },
+  "presets": {
+    "name": "Email signup"
+  }
+},        
+
+
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+
+
+--------------------------------------
+06/12/24
+base.css line no. 1811
+.field__label,
+.customer .field 
+
+line no. 1870
+.field__button 
+
+line no. 1657
+.field__input,
+.select__select,
+.customer .field input,
+.customer select
+
+line no . 1828
+.field__input:focus ~ .field__label,
+.field__input:not(:placeholder-shown) ~ .field__label,
+.field__input:-webkit-autofill ~ .field__label,
+.customer .field input:focus ~ label,
+.customer .field input:not(:placeholder-shown) ~ label,
+.customer .field input:-webkit-autofill ~ label
+
+
+add 
+.field__input{
+  margin: 0px;
+}
+
+remove
+.caption-large,
+.customer .field input,
+.customer select,
+.field__input, //this
+.form__label,
+.select__select {
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+
+remove 711 this
+.field__input:focus-visible,
+
+line 1773
+.field
+
+line. 1730
+
+.field__input:focus,
+  border-radius: var(--border-radius);
+
+
+
+
+
+
+
+
+27/12/24
+---------------
+base.css
+
+.signIn__button {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.signIn__button button{
+  width: 100%;
+}
+
+.user-modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  max-width: 50%;
+  width: 100%;
+  bottom: 0;
+  visibility: hidden;
+  transform: translate(100%);
+  -webkit-transition: all 0.45s ease-in-out;
+  -moz-transition: all 0.45s ease-in-out;
+  -o-transition: all 0.45s ease-in-out;
+  -ms-transition: all 0.45s ease-in-out;
+  transition: all 0.45s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  overflow-y: auto;
+  z-index: 3;
+}
+
+
+remove class
+  .search-modal {
+    padding: 20px;
+    max-width: 100%;
+    z-index: 3;
+  }
+
+remove customer button claa in base.css
+
+<div class="account-create">
+      <div class="account predictive-search__head customer-popup">
+        <h4>{{ 'customer.login_page.create_account_label' | t }}</h4>
+        <span>{{ 'customer.login_page.create_account_content' | t }}</span>
+        <a href="{{ routes.account_register_url }}" class="current-color underlined-hover-link hover-effect">
+          <span class="hover-label">
+            <span>{{ 'customer.login_page.create_account' | t }}</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+
+07/01/25
+
+faq title change in default scheme
+"default": "Frequently Asked Questions"
+
+
+
+main-article.blog_show_author
+
+
+
+
+<small class="tax-note caption-large rte">
+  {%- if cart.duties_included and cart.taxes_included -%}
+    {%- if shop.shipping_policy.body == blank -%}
+      {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+    {%- else -%}
+      {{
+        'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+        | t: link: shop.shipping_policy.url
+      }}
+    {%- endif -%}
+  {%- elsif cart.duties_included == false and cart.taxes_included -%}
+    {%- if shop.shipping_policy.body == blank -%}
+      {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+    {%- else -%}
+      {{
+        'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+        | t: link: shop.shipping_policy.url
+      }}
+    {%- endif -%}
+  {%- elsif cart.duties_included and cart.taxes_included == false -%}
+    {%- if shop.shipping_policy.body == blank -%}
+      {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+    {%- else -%}
+      {{
+        'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+        | t: link: shop.shipping_policy.url
+      }}
+    {%- endif -%}
+  {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+    {%- if shop.shipping_policy.body == blank -%}
+      {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+    {%- else -%}
+      {{
+        'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+        | t: link: shop.shipping_policy.url
+      }}
+    {%- endif -%}
+  {%- endif -%}
+</small>
+
+
+
+
+
+
+
+.complementary-products__container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;  
+}
+.complementary-products__container .card--horizontal .card__inner {
+  max-width: 100px;
+}
+
+
+base 1965
+.quantity {
+  color: rgba(var(--color-foreground));
+  position: relative;
+  width: 120px;
+  display: flex;
+  gap: 10px;
+  border-radius: var(--border-radius);
+  min-height: 37px;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+}

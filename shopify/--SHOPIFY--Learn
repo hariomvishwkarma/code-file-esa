@@ -1,0 +1,28 @@
+--SHOPIFY--
+
+1.section 
+ a.img{{ block.settings.offer-image | img_url: 'master' }}
+ b.text{{ block.settings.order-button-link }}
+ c.forloop{% for block in section.blocks %}{% endfor %}
+ d.schema{setting,block,presets}
+ e.{{ forloop.index }}
+ f.{% if forloop.first %}active{% endif %}
+ g.icon render
+ h.css,js
+ i.cdn
+ j.
+
+2.customization
+ a.theme setting
+ b.
+
+3.Other
+ a.page
+ b.filter 
+ c.product
+ d.collection
+ e.navigation 
+ f.blog post
+ g.metafield --
+ h.color swatch
+ i.product quantity product page
