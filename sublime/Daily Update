@@ -617,3 +617,123 @@ Date: 07/02/2025
 Theme Name: Award Theme [H]
 Link: https://awardthemes.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=147297009880
 ------Worked on Pricing plan page(Desktop completed) and Home page image banner.
+
+=====================================================================================
+
+Date: 10/02/2025
+
+@@Award Themes
+
+Theme Name: Award Theme [H]
+Link: https://awardthemes.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=147297009880
+------Worked on Pricing plan page completed with responsive.
+
+------------------------------------
+
+@@ZAUBERMONTAG
+
+Theme Name: Igloo | Theme Support [20/01/25]
+Link: https://www.zaubermontag.de/en?_ab=0&_fd=0&_sc=1&preview_theme_id=179637846363
+
+I have checked in the last changes made and I think all pages are updated. Regarding the font size for these sentences could it be altered to a smaller size?.
+====>Done.
+
+=====================================================================================
+
+Date: 11/02/2025
+
+@@Award Themes
+
+Theme Name: Award Theme
+Link: https://awardthemes.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=146185847000
+------Worked on Cotact page(completed 80%).
+
+
+=====================================================================================
+
+Date: 12/02/2025
+
+@@Award Themes
+
+Theme Name: Award Theme
+Link: https://awardthemes.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=146185847000
+==>Worked on Cotact page(completed).
+
+-----------------------------------------------------------
+
+@@True Vape USA
+
+Theme Name: Updated copy of Energy
+Link: https://www.truevapeusa.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=148387004635
+
+The only thing I am having trouble with is figuring out where the filters are pulling from so that I can adjust the filter words.
+The second thing is I want to know if its possible to get rid of the collections page.
+==>Done.
+
+---------------------------------------------------
+
+@@KeepitSealdz
+
+Theme Name: Updated copy of Igloo | ITG Theme Support - 3
+Link: https://keepitsealdz.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=148379107579
+
+Here above is a link to the PageSpeed Insights of my website. There seems to be some issues with image rendering, making the page slower to appear than supposed to.
+==>LCP has been reduced.
+https://pagespeed.web.dev/analysis/https-keepitsealdz-com/a5xdrd3fnb?use_original_url=true&form_factor=mobile
+Largest Contentful Paint:  5.2s
+
+-Possible to center the text of title, qty remaining and all text?
+==>Done
+
+-Possible to make the quantity selector, add to cart, and paypal buttons less wide ? 
+==>Done
+
+The cart doesn’t show the items it bugs out of frame!…
+Take out google and apple pay from that section only (keep it in the cart page still).
+==> Work in progress
+
+=====================================================================================
+
+Date: 13/02/2025
+
+@@KeepitSealdz
+
+Theme Name: Igloo | ITG Theme Support - 3[12/02/2025]
+Link: https://keepitsealdz.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=148441268475
+
+Here above is a link to the PageSpeed Insights of my website. There seems to be some issues with image rendering, making the page slower to appear than supposed to.
+==>LCP has been reduced.
+https://pagespeed.web.dev/analysis/https-keepitsealdz-com/w4pq34cegl?use_original_url=true&form_factor=desktop
+Largest Contentful Paint:  5.4s
+
+The cart doesn’t show the items it bugs out of frame!…
+==>Done.
+
+Take out google and apple pay from that section only (keep it in the cart page still).
+==>Dynamic checkout buttons have been removed from the cart popup. I want to inform you that you can't show a specific single button; either all will be removed or all will be shown.
+
+I see the arrow on buttons as shown here has made a return!… We had decided to take it out before and it looked great so please take it out again (on all red buttons)
+==>Done.
+
+The border around the “Shop by items” section is back when we decided to take it off…
+==>Done.
+
+Take it out again for that section.	
+Moreover, i would like the border to be off for ALL collections, except :
+-Booster and blisters packs
+And i mean by that, FOR ALL PRODUCTS INSIDE A COLLECTION. Example as shown here via picture.
+==>Done
+
+---------------------------------------------------
+
+@@ZAUBERMONTAG
+
+Theme Name: Igloo | Theme Support [20/01/25]
+Link: https://www.zaubermontag.de/en?_ab=0&_fd=0&_sc=1&preview_theme_id=179637846363
+
+I can’t recognise a smaller font regarding my tax notification sentences in all email notification. 
+Where have you made changes?
+==>Done.
+
+And I am also confused where I can find the updates regarding the out of stock email notifications. I could follow your steps shown but when I tried a product which is out of stock there was no email field popping up. Mod I need to activate something first?
+==>See the video
