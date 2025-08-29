@@ -1,10 +1,10 @@
 shopify theme 
 
-1. home page
+1. home page - done
 2. collection all page
 3. collection page
-4. product page
-5. account pages
+4. product page -done
+5. account pages -done
 	a. register page
 	b. login page
 	c. recover page
@@ -12,8 +12,8 @@ shopify theme
 	e. address page
 	f. activate page
 	g. reset
-6. cart drawer
-7. cart page
+6. cart drawer - done
+7. cart page 
 8. gift card product and page
 9. search drawer and search page
 10. 404 page
@@ -35,4 +35,68 @@ After complete
 5. Check all the setting in theme
 6. check placeholders
 7. 
+
+
+
+
+progress
+
+2. collection all page
+3. collection page
+7. cart page 
+8. gift card product and page
+9. search drawer and search page
+11. password page
+12. blog post
+13. blog page
+14. contact page
+
+
+
+
+
+
+new work points -
+
+- Unit pricing
+
+- Blog page requirementsAnchor - article.excerpt_or_content not article.content
+
+- All images require the alt attribute. Themes must use image.alt or image_url | image_tag: alt: string for product images.
+
+perfect work esa widget product section follow this step :-
+Add price, compare price and unit price - https://prnt.sc/fi8EyZ5ILPMc
+add images with alt value - (make sure ke jo metfield me value dal rahe he uske according hi image rahe or value and bydefault me image tab hi dikhegi jab sahi value hogi) - https://prnt.sc/wiYD99LHbgi6
+add color and value in metafeild - https://prnt.sc/y7TxNvvQTpnM
+add discount in product customization - https://prnt.sc/5N-7XDnyS27Q
+
+
+Sure! Here's the same content with the asterisks (\*) removed:
+
+---
+
+
+**✅ ESA Widget Product Section – Setup Checklist**
+
+Follow these steps carefully to ensure the ESA subscription widget functions correctly:
+
+1. Add Pricing Information
+   Set the following values in the product setup:
+   * Price
+   * Compare at Price
+   * Unit Price
+     📷 Reference: [Screenshot](https://prnt.sc/fi8EyZ5ILPMc)
+
+2. Upload Images with Correct Alt Text
+   * The alt text must match the values assigned in the metafield.
+   * The image will only display by default if the alt text matches the metafield value.
+     📷 Reference: [Screenshot](https://prnt.sc/wiYD99LHbgi6)
+
+3. Set Metafield Color and Value
+   * Go to the product metafields and assign the appropriate color and value fields.
+     📷 Reference: [Screenshot](https://prnt.sc/y7TxNvvQTpnM)
+
+4. Configure Discount in Product Customization
+   * Use the product customizer or metafield configuration to set the discount values.
+     📷 Reference: [Screenshot](https://prnt.sc/5N-7XDnyS27Q)
 

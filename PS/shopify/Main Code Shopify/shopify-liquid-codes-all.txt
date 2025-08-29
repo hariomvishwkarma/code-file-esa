@@ -50,6 +50,9 @@ Shopify liquid imp code
 46. If want english in top in Language selector.
 47. blog post meta feild forloop
 48. how to add read time on to article and blog
+49. Add meta keyword in store pages
+50. Image code for shopify
+51. variant image by Metafeild - variant discount price by metafeild
 --------------------------------------------------------------------------------------------------------------------------
 
 1. metafeild code - {%- if product.metafields.custom.svg %}{{ product.metafields.custom.svg }} {% endif -%}
@@ -687,13 +690,13 @@ slideshow-component .slideshow.banner{
 -------------------------------------------
 
 {%- for variant in product.variants -%}
-        {%- assign variant_value = variant.options -%}
-        {%- if variant_value contains value and variant.available -%}
-           {%- assign v_url = variant.metafields.custom.variant_detail | metafield_tag -%}
-          <span class="ps-varmeta">{{ v_url }}</span>
-          {%- break -%}
-        {%- endif -%}
-      {%- endfor -%}
+  {%- assign variant_value = variant.options -%}
+  {%- if variant_value contains value and variant.available -%}
+     {%- assign v_url = variant.metafields.custom.variant_detail | metafield_tag -%}
+    <span class="ps-varmeta">{{ v_url }}</span>
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
 
 --------------------------------------------
 
@@ -781,3 +784,41 @@ And single ke liye
 {% if canonical_url == "https://awardthemes.com/" %}
  <meta name="keywords" content="Premium Shopify Themes, Best Shopify Theme, Top Shopify themes, Ecommerce Business, eCommerce Website Template, Shopify store themes, Ecommerce stores, Best Shopify stores, Best Shopify theme for ecommerce, Shopify premium themes.">
 {% endif %}
+
+======================================================================================================
+
+50. Image code for shopify
+{% assign scrolling_image = block.settings.image %}
+  {% if scrolling_image != blank %}
+    <img
+      srcset="
+        {%- if scrolling_image.width >= 165 -%}{{ scrolling_image | image_url: width: 165 }} 165w,{%- endif -%}
+        {%- if scrolling_image.width >= 330 -%}{{ scrolling_image | image_url: width: 330 }} 330w,{%- endif -%}
+        {%- if scrolling_image.width >= 535 -%}{{ scrolling_image | image_url: width: 535 }} 535w,{%- endif -%}
+        {%- if scrolling_image.width >= 750 -%}{{ scrolling_image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if scrolling_image.width >= 1000 -%}{{ scrolling_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+        {%- if scrolling_image.width >= 1500 -%}{{ scrolling_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {%- if scrolling_image.width >= 3000 -%}{{ scrolling_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+        {{ scrolling_image | image_url }} {{ scrolling_image.width }}w
+      "
+      src="{{ scrolling_image | image_url: width: 1500 }}"
+      alt=""
+      height="{{ scrolling_image.height }}"
+      width="{{ scrolling_image.width }}"
+      loading="lazy"
+      class="motion-reduce"
+    >
+  {% endif %}
+
+======================================================================================================
+51. variant image by Metafeild 
+      {%- assign matched_variant = product.variants | where: 'title', value | first -%}
+      {%- if matched_variant and matched_variant.metafields.custom.variant_image.value != blank -%}
+        <img 
+          src="{{ matched_variant.metafields.custom.variant_image.value | image_url: width: 100 }}" 
+          alt="{{ value }}" 
+          class="ps-varmeta"
+        >
+      {%- endif -%}
+      variant discount price by metafeild
+      {% if matched_variant.compare_at_price != blank %}<span class="variant_save_label">SAVE {{ matched_variant.compare_at_price | minus: matched_variant.price | money_without_trailing_zeros }}</span>{% endif %}

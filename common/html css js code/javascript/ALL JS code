@@ -412,3 +412,16 @@ firstSwatchElement.parentNode.insertBefore(commonPsDiv, firstSwatchElement);
 swatchElements.forEach(element => {
     commonPsDiv.appendChild(element);
 });
+
+-----------------------------------------------
+
+22. Custom element js
+
+class QuickPurchase extends HTMLElement {
+  constructor() {
+    super();
+
+  }  
+}
+
+customElements.define('quick-purchase', QuickPurchase);
