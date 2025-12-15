@@ -1,10 +1,10 @@
-shopify theme 
+shopify theme work pages list:-
 
-1. home page - done
-2. collection all page
+1. home page
+2. collection all page(collection list section same this)
 3. collection page
-4. product page -done
-5. account pages -done
+4. product page
+5. account pages
 	a. register page
 	b. login page
 	c. recover page
@@ -12,7 +12,7 @@ shopify theme
 	e. address page
 	f. activate page
 	g. reset
-6. cart drawer - done
+6. cart drawer
 7. cart page 
 8. gift card product and page
 9. search drawer and search page
@@ -26,8 +26,7 @@ shopify theme
 - Theme popups
 - Gift card product
 
-After complete 
-
+After complete :-
 1. Translation json  in  de, es, fr, it
 2. Check all section in customize with all setting
 3. check with responsive
@@ -36,67 +35,229 @@ After complete
 6. check placeholders
 7. 
 
-
-
-
-progress
-
-2. collection all page
-3. collection page
-7. cart page 
-8. gift card product and page
-9. search drawer and search page
-11. password page
-12. blog post
-13. blog page
-14. contact page
-
-
-
-
-
-
-new work points -
-
+theme requirments new work points 2025-
 - Unit pricing
-
 - Blog page requirementsAnchor - article.excerpt_or_content not article.content
-
 - All images require the alt attribute. Themes must use image.alt or image_url | image_tag: alt: string for product images.
 
-perfect work esa widget product section follow this step :-
-Add price, compare price and unit price - https://prnt.sc/fi8EyZ5ILPMc
-add images with alt value - (make sure ke jo metfield me value dal rahe he uske according hi image rahe or value and bydefault me image tab hi dikhegi jab sahi value hogi) - https://prnt.sc/wiYD99LHbgi6
-add color and value in metafeild - https://prnt.sc/y7TxNvvQTpnM
-add discount in product customization - https://prnt.sc/5N-7XDnyS27Q
 
 
-Sure! Here's the same content with the asterisks (\*) removed:
+section customization layout
 
----
+- color scheme
+- page backgreound
+- full width
+- wavy border
+
+heeader
 
 
-**✅ ESA Widget Product Section – Setup Checklist**
+--------------------------------------------------------------------------------------
+FLAVORY THEME:-
+--------------------------------------------------------------------------------------
 
-Follow these steps carefully to ensure the ESA subscription widget functions correctly:
+flavory Pending- 
+1. collection all page
+2. collection page
+3. gift card product and page
+4. collection list section
+9. search drawer and search page
+4. password page
+5. blog post
+6. blog page
+7. contact page
+8. Newsletter popup
+9. mobile drawer
+10. product popup
+11. create new collection and product
 
-1. Add Pricing Information
-   Set the following values in the product setup:
-   * Price
-   * Compare at Price
-   * Unit Price
-     📷 Reference: [Screenshot](https://prnt.sc/fi8EyZ5ILPMc)
+Flavory theme secion details:- 
 
-2. Upload Images with Correct Alt Text
-   * The alt text must match the values assigned in the metafield.
-   * The image will only display by default if the alt text matches the metafield value.
-     📷 Reference: [Screenshot](https://prnt.sc/wiYD99LHbgi6)
+Heaer & footer:-
+1. announcement
+2. Header
+3. Footer
 
-3. Set Metafield Color and Value
-   * Go to the product metafields and assign the appropriate color and value fields.
-     📷 Reference: [Screenshot](https://prnt.sc/y7TxNvvQTpnM)
+Popups:-
+1. newsletter
+2. Cart drawer
+3. Search
 
-4. Configure Discount in Product Customization
-   * Use the product customizer or metafield configuration to set the discount values.
-     📷 Reference: [Screenshot](https://prnt.sc/5N-7XDnyS27Q)
+-----------------------------------------------------------------------
+Completed home page sections, pages and  popups
+-----------------------------------------------------------------------
+(Worked in imrove code quality and rephrace code add new settings)
 
+Header:-
+1. Announcement bar
+2. Header(only mega menu remaining)
+3. Footer( only Bottam content remaining)
+
+1. Vertical Slideshow
+2. Text column with icons
+3. Category list
+4. Rich text
+5. Footer
+6. Blog post
+7. Quick purchase
+8. Newsletter
+9. Countdown Clock
+10. Scrolling text
+11. Product bundle
+12. Logo list
+13. Faq's
+14. Divider
+15. custom liquid
+16. Video
+17. Image with highlights
+18. Testimonial
+19. Image with text
+20. Scrolling image rich text
+21. Ai powered section
+22. featured collection
+23. Collection list
+24. Featured product
+25. Reels section
+26. collection image banner 
+27. image banner
+28. slide show
+
+popups:-
+1. Cart popup
+2. Search popup
+3. newsletter popup
+3. Menu drawer mobile
+4. product popup 
+
+Pages:- 
+1. cart page
+2. collection all page
+	a. Filter - work in progress
+	b. pagination
+	c. slider
+3. product page
+	a. Pickup point
+	b. product model image support
+4. search page
+	a. Filter - work in progress
+	b. pagination
+5. Blog page
+6. blog post page
+7. contact page 
+	a. check after success and unsuccess
+8. account pages:- 
+	a. register page
+	b. login page
+	c. recover page
+	d. order page
+	e. address page
+	f. reset
+	g. activate page
+9. gift card product and page
+10. password page
+
+Other funcrtions:-
+Scroll to top - Done
+
+--------------------------------------------------------------------------
+Home page remaining sections, popups 
+--------------------------------------------------------------------------
+ 
+ 404 pages
+
+section remaining:-
+2. eat accordingly
+
+
+
+
+filter
+variant
+scroll to top
+
+--------------------------------------------------------------------------
+Bugs,errors and work
+--------------------------------------------------------------------------
+- In atc button if full quantity added in cart and after try atc so error not show.
+- Set Image height in search and cart. - done
+- rem to px
+- in product popup slider button z index
+- search popup close with no transition
+- filter fopoup close with no transition
+- header sticky color 
+- mega menu problem 
+- account login required 
+- footer menu design - Solved
+- atc button in collection product - Solved
+- scroll bug - done
+- check popup size - done
+- in swiper slide contaienrr remove scroll animation - done
+- header mobile drawer arrow
+- menu hover
+- video reel hover animation abd cover - done
+- slider button issue
+- add height in header drowpdown - done
+- video max width, loop video, container cover.
+- search bar error
+- 
+
+product page:-
+- vertical me portraint work karwana he. = done
+- tino condition me image ratio chalega and colum ki condtion me me original scale bhi rahega. == done
+- variant check karne par uski image par redirect kare. == Done
+- variant limit
+- agar contain he tab bg me konsa color deikhega bg me.
+- Updated quick add popup element - quick-add-modal to quick-add-popup
+- show thumbnail in mobile not working. - progress
+- Update pickup strore design -done
+
+updated file name and variables.
+- global.js -> theme.js
+- css-variables.css to style-variables.css
+- radius varianbles updated
+- scrolling text to marquee
+
+global:-
+Zigzag border for sections
+add global infor for  transparet image 
+
+Add settings:-
+Password page par bg image
+account order tag bg color	
+
+27/11 - early morning work:-
+solve image banner zigzag and color according to figma
+28/11 - Early morning
+Schema check image banner section blog page
+--------------------------------------------------------------------------------------
+After complete all work
+* Documentation - 
+* Presets - 
+* Language translator - 
+* seo
+--------------------------------------------------------------------------------------
+
+
+
+
+
+https://css-generators.com/custom-borders/
+
+
+
+9425036050
+.box {
+  mask: radial-gradient(14px at 25% 0,#0000 98%,#000) 50% 14px/56px 100% repeat-x,    radial-gradient(14px at 75% 50%,#000 99%,#0000 101%) top/56px 28px repeat-x;
+}
+.box {
+  mask: 
+    radial-gradient(10px at 75% 100%,#0000 98%,#000) 50% calc(100% - 10px)/40px 100% repeat-x,
+    radial-gradient(10px at 25% 50%,#000 99%,#0000 101%) bottom/40px 20px repeat-x
+}
+.box {
+  mask: 
+    radial-gradient(10px at 25% 0   ,#0000 98%,#000) 50% 10px/40px 51% repeat-x,
+    radial-gradient(10px at 75% 50% ,#000 99%,#0000 101%) top/40px 20px repeat-x,
+    radial-gradient(10px at 75% 100%,#0000 98%,#000) calc(50% + 20px) calc(100% - 10px)/40px 51% repeat-x,
+    radial-gradient(10px at 25% 50% ,#000 99%,#0000 101%) calc(50% + 20px) 100%/40px 20px repeat-x
+}

@@ -53,6 +53,7 @@ Shopify liquid imp code
 49. Add meta keyword in store pages
 50. Image code for shopify
 51. variant image by Metafeild - variant discount price by metafeild
+52. Add app block in product page.
 --------------------------------------------------------------------------------------------------------------------------
 
 1. metafeild code - {%- if product.metafields.custom.svg %}{{ product.metafields.custom.svg }} {% endif -%}
@@ -822,3 +823,18 @@ And single ke liye
       {%- endif -%}
       variant discount price by metafeild
       {% if matched_variant.compare_at_price != blank %}<span class="variant_save_label">SAVE {{ matched_variant.compare_at_price | minus: matched_variant.price | money_without_trailing_zeros }}</span>{% endif %}
+
+======================================================================================================
+52. Add app block in product page.
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when '@app' %}
+        {% render block %}
+    {% endcase %}
+  {% endfor %}
+
+  "blocks": [
+      {
+        "type": "@app"
+      }
+    ]

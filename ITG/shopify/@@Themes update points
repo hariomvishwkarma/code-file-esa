@@ -1,83 +1,24 @@
 @@Themes update points
 
 1. Theme name = energy
-	a) Update feature collection slider in mobile
+	a) Add slider css in feature product section - {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+  b) search bar update
+  c) Updated scrolling marquee
+  d) added custom section
+
 
 2. Theme name = igloo
 	a) Same variant name in all option, input checked not working(1 se jyada option me same variant hone par dono check nhi honge)
+  b) In Vertical showcase section, swatch not working.
+    --  add asign in main section - https://ibb.co/jkJySqdz
+--------------------------------------------------------------'
 
-
-
-linear-gradient(90deg, rgba(220,167,2,1) 0%, rgba(208,138,2,1) 20%, rgba(226,174,28,1) 40%, rgba(253,226,118,1) 60%, rgba(236,191,65,1) 80%, rgba(220,167,2,1) 100%);
-
-
-
-
-background: linear-gradient(90deg, rgba(220,167,2,1) 0%, rgba(208,138,2,1) 20%, rgba(226,174,28,1) 40%, rgba(253,226,118,1) 60%, rgba(236,191,65,1) 80%, rgba(220,167,2,1) 100%);
--webkit-background-clip: text;
-        background-clip: text;
--webkit-text-fill-color: transparent;
-
-
-
-
-{{ firstCollection.products.size }}  {{  section.settings.products_per_row }} {{ section.settings.products_to_show }}
-
-
-{%- for product in firstCollection.products limit: section.settings.products_to_show -%}
-                  {% if forloop.last %}
-                    {% assign count_last = forloop.index | minus: section.settings.products_per_row | plus: 1 %}
-                  {% endif %}
-                {% endfor %}
-                {% for i in (1..count_last) %}
-
-
-
-{%- for product in firstCollection.products limit: section.settings.products_to_show -%}
-    {% if forloop.last %}
-      {% assign total_product = forloop.index %}
-      {% assign desk_count_last =  forloop.index | minus: section.settings.products_per_row | plus: 1 %}
-      {% assign mob_count_last =  forloop.index | minus: section.settings.products_per_row_mobile | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-  <div class="slider__controls-area-tablet slider-buttons no-js-hidden{% if show_desktop_slider %}{% elsif show_mobile_slider %} large-up-hide{% else %} hidden{% endif %}">
-    <div class="slider-counter">
-      <div class="slideshow__control-wrapper slider__controls-arrow" desk_count="{{ desk_count_last }}" mob_count="{{ mob_count_last }}">
-        <button type="button" class="slider-button slider-button--prev arrow-with-dots" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" style="display:none;">
-          {% render 'theme-icons', icon: 'slider-icon-left' %}
-        </button>
-        {% for i in (1..total_product) %}
-          <button class="slider-counter__link--dots custom-dots--{{ forloop.index }}{% if forloop.index > desk_count_last %} desk-display-none{% endif %}{% if forloop.index > mob_count_last %} mob-display-none{% endif %}" data-id="testimonial-{{ section.id }}" aria-label="testimonial-slider-dots" aria-controls="Slider-{{ section.id }}">
-            <span class="slider-counter-dots">
-              <span class="dot"></span>
-            </span>
-          </button>
-        {%- endfor -%}
-        <button  type="button" class="slider-button slider-button--next arrow-with-dots" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" style="display:none;">
-          {% render 'theme-icons', icon: 'slider-icon-right' %}
-        </button>
-      </div>
-    </div>
-  </div>
-
-
-@media screen and (max-width: 749px) {
-  .mob-display-none{
-    display: none;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .desk-display-none {
-    display: none;
-  }
-}
-
-
-
-
-
-
-
+1. spelling- page, typo, custom - done
+2. remove image option body color - 
+3. add spacing setting -done
+4. image radius - done
+5. banner button in button - done
+6. banner heading - done
+7. translation in section text -done
 
 https://shopify.dev/docs/storefronts/themes/best-practices/performance#run-a-lighthouse-audit-using-shopify-data
