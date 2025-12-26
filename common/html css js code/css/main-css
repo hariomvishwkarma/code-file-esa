@@ -118,6 +118,7 @@ la-mansio-half-pack - 0
     display: block;
     margin: 25px auto 15px;
 }
+
 11. Image in After before css
 .title_collapsed:after {
     content: "";
@@ -139,3 +140,6 @@ la-mansio-half-pack - 0
 12. shopify-accelerated-checkout-cart:not(:has(shopify-google-pay-button, shopify-apple-pay-button)) shop-pay-wallet-button {
     width: 100% !important;
 }
+
+
+13. .button--secondary-box:has(.swiper-button-disabled)::after {

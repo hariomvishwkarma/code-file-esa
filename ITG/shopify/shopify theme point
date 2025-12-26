@@ -159,6 +159,10 @@ Pages:-
 Other funcrtions:-
 Scroll to top - Done
 
+
+
+other functionlity jo requirement ke according chalna chahiye.
+-  focus karne par
 --------------------------------------------------------------------------
 Home page remaining sections, popups 
 --------------------------------------------------------------------------
@@ -180,35 +184,36 @@ Bugs,errors and work
 --------------------------------------------------------------------------
 - In atc button if full quantity added in cart and after try atc so error not show.
 - Set Image height in search and cart. - done
-- rem to px
-- in product popup slider button z index
-- search popup close with no transition
-- filter fopoup close with no transition
-- header sticky color 
-- mega menu problem 
-- account login required 
-- footer menu design - Solved
-- atc button in collection product - Solved
+- rem to px - done
+- in product popup slider button z index - done
+- search popup close with no transition - done
+- filter fopoup close with no transition - Done
+- header sticky color - done
+- mega menu problem - done
+- footer menu design - done
+- atc button in collection product - done
 - scroll bug - done
 - check popup size - done
 - in swiper slide contaienrr remove scroll animation - done
-- header mobile drawer arrow
-- menu hover
+- header mobile drawer arrow - done
+- menu hover - done
 - video reel hover animation abd cover - done
-- slider button issue
 - add height in header drowpdown - done
-- video max width, loop video, container cover.
-- search bar error
-- 
-
+- video max width, container cover. 
+- search bar error - done
+- slider button span to button - done
+- catagaory list grid gap - done
+- collection banner mobile - done
+- cart empty button - done
+- remove sorting in list colletion - done
+-  focus
 product page:-
 - vertical me portraint work karwana he. = done
 - tino condition me image ratio chalega and colum ki condtion me me original scale bhi rahega. == done
 - variant check karne par uski image par redirect kare. == Done
-- variant limit
-- agar contain he tab bg me konsa color deikhega bg me.
+- variant limit - done
 - Updated quick add popup element - quick-add-modal to quick-add-popup
-- show thumbnail in mobile not working. - progress
+- show thumbnail in mobile not working. - done
 - Update pickup strore design -done
 
 updated file name and variables.
@@ -217,18 +222,31 @@ updated file name and variables.
 - radius varianbles updated
 - scrolling text to marquee
 
-global:-
-Zigzag border for sections
-add global infor for  transparet image 
 
-Add settings:-
-Password page par bg image
-account order tag bg color	
+global:-
+Zigzag border for sections -done
+add global information for  transparet image
+create snippet for button
+theme settings more
+image tag change to focal
+test unit price
+
+
+Add settings:- 
+Password page par bg image - done
+account order tag bg color
 
 27/11 - early morning work:-
 solve image banner zigzag and color according to figma
 28/11 - Early morning
 Schema check image banner section blog page
+
+
+
+home page - 
+add btn in feature collecion
+image ki descripotion
+
 --------------------------------------------------------------------------------------
 After complete all work
 * Documentation - 
@@ -260,4 +278,26 @@ https://css-generators.com/custom-borders/
     radial-gradient(10px at 75% 50% ,#000 99%,#0000 101%) top/40px 20px repeat-x,
     radial-gradient(10px at 75% 100%,#0000 98%,#000) calc(50% + 20px) calc(100% - 10px)/40px 51% repeat-x,
     radial-gradient(10px at 25% 50% ,#000 99%,#0000 101%) calc(50% + 20px) 100%/40px 20px repeat-x
+}
+
+
+
+@media screen and (max-width: 989px) {
+  .featured_collection-section .swiper-wrapper {
+    align-items: unset;
+  }
+  .product-grid-item .quick-add {
+    position: absolute;
+    bottom: 0;
+    margin-top: 0;
+  }
+  .product-card-wrapper {
+    padding-bottom: 60px;
+  }
+  .featured_collection-section .swiper-slide {
+    height: auto;
+  }
+  .quantity-add__button {
+    margin-bottom: 0;
+  }
 }
