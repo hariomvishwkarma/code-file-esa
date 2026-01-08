@@ -257,10 +257,28 @@ After complete all work
 
 
 
+header
+Add show/hide for search and account - done
+search par click par focus in input - done
+add push ib product all - done
+testimonial height
+blog image focus
 
 
-https://css-generators.com/custom-borders/
 
+
+Speed test:
+Home Desktop: - 89
+Home mobile:- 63
+
+collection desktop:- 98
+collection mobile:- 74
+
+product desktop:- 98
+product mobile:- 76
+
+Desktop - [(98 * 31) + (98 * 33) + (89 * 13)] / 77 = 96
+Mobile - [(74 * 31) + (76 * 33) + (63 * 13)] / 77 = 73
 
 
 9425036050
@@ -280,7 +298,9 @@ https://css-generators.com/custom-borders/
     radial-gradient(10px at 25% 50% ,#000 99%,#0000 101%) calc(50% + 20px) 100%/40px 20px repeat-x
 }
 
-
+mask: 
+    radial-gradient(10px at 75% 100%,#0000 98%,#000) 50% calc(100% - 10px)/40px 100% repeat-x,
+    radial-gradient(10px at 25% 50%,#000 99%,#0000 101%) bottom/40px 20px repeat-x
 
 @media screen and (max-width: 989px) {
   .featured_collection-section .swiper-wrapper {
