@@ -90,8 +90,8 @@ Completed home page sections, pages and  popups
 
 Header:-
 1. Announcement bar
-2. Header(only mega menu remaining)
-3. Footer( only Bottam content remaining)
+2. Header
+3. Footer
 
 1. Vertical Slideshow
 2. Text column with icons
@@ -264,6 +264,7 @@ add push ib product all - done
 testimonial height
 blog image focus
 
+footer alignment
 
 
 
@@ -301,166 +302,3 @@ Mobile - [(74 * 31) + (76 * 33) + (63 * 13)] / 77 = 73
 mask: 
     radial-gradient(10px at 75% 100%,#0000 98%,#000) 50% calc(100% - 10px)/40px 100% repeat-x,
     radial-gradient(10px at 25% 50%,#000 99%,#0000 101%) bottom/40px 20px repeat-x
-
-@media screen and (max-width: 989px) {
-  .featured_collection-section .swiper-wrapper {
-    align-items: unset;
-  }
-  .product-grid-item .quick-add {
-    position: absolute;
-    bottom: 0;
-    margin-top: 0;
-  }
-  .product-card-wrapper {
-    padding-bottom: 60px;
-  }
-  .featured_collection-section .swiper-slide {
-    height: auto;
-  }
-  .quantity-add__button {
-    margin-bottom: 0;
-  }
-}
-
-
-
-fetchProductSection(productUrl, optionValueIds, focusId) {
-    const originalSectionId = this.getSectionId();
-    const displaySectionId = this.getDisplaySectionId();
-    const params = optionValueIds.length > 0 
-      ? `&option_values=${optionValueIds.join(',')}` 
-      : '';
-
-    // Debug logging
-    console.log('Fetching product section:', {
-      productUrl,
-      originalSectionId,
-      displaySectionId,
-      isInPopup: this.isInPopup(),
-      currentProductUrl: this.dataset.productUrl
-    });
-
-    fetch(`${productUrl}?section_id=${originalSectionId}${params}`)
-      .then(response => response.text())
-      .then(responseText => {
-        let html = new DOMParser().parseFromString(responseText, 'text/html');
-
-        if (this.dataset.originalSection) {
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = responseText.replaceAll(originalSectionId, displaySectionId);
-          html = new DOMParser().parseFromString(tempDiv.innerHTML, 'text/html');
-        }
-
-        // Check if product changed (combined listings)
-        const oldProductUrl = this.dataset.productUrl;
-        const newProductUrl = productUrl;
-        const productChanged = newProductUrl && oldProductUrl !== newProductUrl;
-
-        console.log('Product changed:', productChanged, 'Old:', oldProductUrl, 'New:', newProductUrl);
-
-        // Allow combined listing based on settings
-        const allowCombinedListing = this.shouldAllowCombinedListing();
-
-        if (productChanged && allowCombinedListing) {
-          // For popups, we need to update the popup content
-          if (this.isInPopup()) {
-            this.handlePopupProductChange(html, newProductUrl, displaySectionId, optionValueIds);
-            return;
-          }
-
-          // Regular product page handling
-          this.dataset.productUrl = newProductUrl;
-
-          if (this.dataset.updateUrl !== 'false') {
-            window.history.replaceState({}, '', newProductUrl);
-          }
-
-          const sourceSection = html.querySelector(`#shopify-section-${displaySectionId}`) || 
-                              html.querySelector(`[data-section-id="${displaySectionId}"]`);
-          const destSection = document.querySelector(`#shopify-section-${displaySectionId}`) || 
-                            document.querySelector(`[data-section-id="${displaySectionId}"]`);
-
-          if (sourceSection && destSection) {
-            const scrollY = window.scrollY;
-            destSection.innerHTML = sourceSection.innerHTML;
-            window.scrollTo(0, scrollY);
-          }
-
-          return;
-        }
-
-        // Regular variant update (no product change)
-        this.updateVariantDetails(html, displaySectionId, optionValueIds, focusId);
-      })
-      .catch(e => console.error('Error fetching product section:', e));
-  }
-
-  // New method to handle product changes in popups
-  handlePopupProductChange(html, newProductUrl, displaySectionId, optionValueIds) {
-    console.log('Handling popup product change to:', newProductUrl);
-    
-    this.dataset.productUrl = newProductUrl;
-
-    // Get the popup container
-    const popup = this.closest('.quick-add-popup, .modal, .popup, [data-popup], [data-modal]');
-    if (!popup) return;
-
-    // Find the content area that needs to be updated
-    const popupContent = popup.querySelector('.quick-add-popup__content-info, .popup__content, .modal__content');
-    if (!popupContent) return;
-
-    // Get the new content from the fetched HTML
-    const newContent = html.querySelector('.quick-add-popup__content-info, .main-product-conatainer, #ProductInfo-' + displaySectionId);
-    
-    if (newContent && popupContent) {
-      // Store scroll position
-      const scrollY = popupContent.scrollTop;
-      
-      // Update the entire popup content
-      popupContent.innerHTML = newContent.innerHTML;
-      
-      // Restore scroll position
-      popupContent.scrollTop = scrollY;
-
-      // Re-initialize any JavaScript that needs to run on the new content
-      this.initializePopupScripts();
-
-      // Update the popup title if it exists
-      const popupTitle = popup.querySelector('.popup__heading, h2');
-      const newTitle = html.querySelector('.product__title h1, .product__title h2');
-      if (popupTitle && newTitle) {
-        popupTitle.textContent = newTitle.textContent;
-      }
-    }
-  }
-
-  // Initialize scripts after popup content update
-  initializePopupScripts() {
-    // Re-initialize variant selects
-    const newVariantSelects = document.querySelectorAll('variant-radios, variant-selects');
-    newVariantSelects.forEach(element => {
-      // Trigger any initialization if needed
-      if (element.init && typeof element.init === 'function') {
-        element.init();
-      }
-    });
-
-    // Re-initialize product form
-    const productForms = document.querySelectorAll('product-form');
-    productForms.forEach(form => {
-      if (form.init && typeof form.init === 'function') {
-        form.init();
-      }
-    });
-
-    // Re-initialize media gallery
-    const mediaGalleries = document.querySelectorAll('media-gallery');
-    mediaGalleries.forEach(gallery => {
-      if (gallery.init && typeof gallery.init === 'function') {
-        gallery.init();
-      }
-    });
-
-    // Dispatch a custom event that other scripts can listen to
-    window.dispatchEvent(new CustomEvent('popupContentUpdated'));
-  }
